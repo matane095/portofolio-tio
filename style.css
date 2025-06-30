@@ -1,0 +1,214 @@
+/* style.css */
+
+/* 1. Import Font & Pengaturan Variabel */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #00aaff; 
+    --background-color: #121212; 
+    --surface-color: #1e1e1e; 
+    --text-color: #e0e0e0; 
+    --subtle-text-color: #a0a0a0; 
+    --border-color: #333333;
+    --success-color: #28a745;
+}
+
+/* 2. Gaya Dasar & Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 3. Kustomisasi Navbar */
+.navbar {
+    background-color: rgba(30, 30, 30, 0.85); /* Semi-transparan */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: white !important;
+}
+
+.nav-link {
+    color: var(--subtle-text-color) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* 4. Bagian Hero (Halaman Utama) */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 85vh;
+    padding: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-section #typing {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    min-height: 48px;
+    border-right: 2px solid var(--primary-color);
+    animation: blink .75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color); }
+}
+
+/* 5. Tombol (Button) */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0088cc;
+    border-color: #0088cc;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 6. Gaya Umum untuk Konten Halaman */
+.content-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* 7. Kartu Proyek */
+.project-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .card-title { color: white; }
+.project-card .card-text { flex-grow: 1; color: var(--subtle-text-color); }
+.project-tags { margin-top: auto; padding-top: 1rem; }
+.project-tags .badge { background-color: #333; color: var(--primary-color); padding: 0.5em 0.7em; }
+
+/* 8. Halaman Tentang Saya */
+.about-img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    border: 5px solid var(--primary-color);
+}
+
+.skill-list .badge {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+/* 9. Halaman Kontak */
+.contact-info p { font-size: 1.1rem; margin-bottom: 1.2rem; display: flex; align-items: center; }
+.contact-info i { color: var(--primary-color); margin-right: 15px; font-size: 1.5rem; }
+.contact-social a { color: var(--text-color); transition: color 0.3s; }
+.contact-social a:hover { color: var(--primary-color); }
+
+.form-control {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 12px;
+}
+
+.form-control:focus {
+    background-color: var(--surface-color);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 170, 255, 0.25);
+}
+
+#form-status {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--success-color);
+}
+
+/* 10. Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--subtle-text-color);
+}
